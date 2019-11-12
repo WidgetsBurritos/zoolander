@@ -16,7 +16,7 @@
     "lint:js": "eslint styleguide/derek styleguide/global",
     "lint:sass": "sass-lint -v",
     "preversion": "npm run babel && npm run harp compile styleguide dist && git add -f dist",
-    "postinstall": "npm run hooks && npm run babel && npm run install:nodemodules",
+    "prepare": "npm run hooks && npm run babel && npm run install:nodemodules",
     "postversion": "git push && git push --tags",
     "sass:compile": "node-sass --output-style=compressed --quiet -o /tmp styleguide/css",
     "start": "concurrently 'npm run watch:babel' 'npm run start:harp' 'npm run start:bs'",
